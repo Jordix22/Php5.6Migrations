@@ -1,0 +1,24 @@
+<?php
+
+require_once(dirname(__FILE__) . '/../src/AbstractMigration.php');
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class {{name}} extends AbstractMigration
+{
+    public function getDescription()
+    {
+        return '';
+    }
+
+    public function up()
+    {
+        $this->addSql('');
+    }
+
+    public function down()
+    {
+        $this->addSql('');
+    }
+}
