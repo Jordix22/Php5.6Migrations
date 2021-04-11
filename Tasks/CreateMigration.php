@@ -5,10 +5,10 @@ require_once(__DIR__ . '/../src/Logger.php');
 class createMigration
 {
     private $logger;
-    const MIGRATION_DIRECTORY = 'Migrations';
-    const TEMPLATE_MIGRATIONS = __DIR__ . '/../Template/migrationFile';
-    const PERMISSIONS = 0755;
 
+    const MIGRATION_DIRECTORY = 'Migrations';
+    const TEMPLATE_MIGRATIONS = '/../Template/migrationFile';
+    const PERMISSIONS = 0755;
 
     public function __construct()
     {
@@ -23,7 +23,7 @@ class createMigration
 
     private function createMigrationDirectoryIfDoesNotExists()
     {
-        $directory = self::MIGRATION_DIRECTORY;
+        $directory = __DIR__ . '/../' . self::MIGRATION_DIRECTORY;
         if (is_dir($directory)) {
             return null;
         }
@@ -34,8 +34,8 @@ class createMigration
     private function createNewMigrationFile()
     {
         $migrationVersion = 'Version' . date('YmdHis');
-        $migrationPathFileName = 'Migrations/' . $migrationVersion . '.php';
-        $migrationTemplate = file_get_contents(self::TEMPLATE_MIGRATIONS);
+        $migrationPathFileName = __DIR__ . '/../' . self::MIGRATION_DIRECTORY . '/' . $migrationVersion . '.php';
+        $migrationTemplate = file_get_contents(__DIR__ . self::TEMPLATE_MIGRATIONS);
         $migrationTemplate = str_replace('{{name}}', $migrationVersion, $migrationTemplate);
 
         if (file_put_contents($migrationPathFileName, $migrationTemplate) !== false) {
