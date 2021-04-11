@@ -21,12 +21,14 @@ class InitMigration
 
         if ($migrationTableAlreadyExistsService()) {
             $this->logger->errorMessage("The migrations table already exists.");
+            return null;
         }
 
         try {
             $this->connector
                 ->connectToDatabase()
                 ->execute($this->getSqlToCreateMigrationsTable());
+            $this->logger->successMessage('Created `migration_version` table');
         } catch (\Exception $exception) {
             $this->logger->errorMessage($exception->getMessage());
         }
