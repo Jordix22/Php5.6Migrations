@@ -38,7 +38,7 @@ class AbstractMigration
             return null;
         }
 
-        $currentTime =  date('Y-m-d H:i:s');
+        $currentTime = date('Y-m-d H:i:s');
         $this->databaseConnection->execute("INSERT INTO $this->schema.migration_version values ($version, '$currentTime')");
     }
 
