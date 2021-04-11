@@ -1,8 +1,8 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../src/Logger.php');
-require_once(dirname(__FILE__) . '/../src/Database.php');
-require_once(dirname(__FILE__) . '/../Services/MigrationTableExistsService.php');
+require_once(__DIR__ . '/../src/Logger.php');
+require_once(__DIR__ . '/../src/Database.php');
+require_once(__DIR__ . '/../Services/MigrationTableExistsService.php');
 
 class InitMigration
 {
@@ -34,7 +34,7 @@ class InitMigration
 
     private function getSqlToCreateMigrationsTable()
     {
-        $config = include(dirname(__FILE__) . '/../Configuration/config.php');
+        $config = include(__DIR__ . '/../Configuration/config.php');
         $schema = isset($config['DATABASE']) ? $config['DATABASE'] : '';
         return "CREATE TABLE `$schema`.`migration_version` (
             `version` VARCHAR(14) NOT NULL,

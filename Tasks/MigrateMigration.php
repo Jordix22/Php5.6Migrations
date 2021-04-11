@@ -1,8 +1,8 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../Services/FetchNotExecutedMigrations.php');
-require_once(dirname(__FILE__) . '/../Services/GetMigrationClass.php');
-require_once(dirname(__FILE__) . '/../src/Logger.php');
+require_once(__DIR__ . '/../Services/FetchNotExecutedMigrations.php');
+require_once(__DIR__ . '/../Services/GetMigrationClass.php');
+require_once(__DIR__ . '/../src/Logger.php');
 
 class MigrateMigration
 {

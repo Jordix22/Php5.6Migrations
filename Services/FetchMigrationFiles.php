@@ -9,7 +9,7 @@ class FetchMigrationFiles
 
     public function __construct()
     {
-        $this->migrationsPath = dirname(__FILE__) . '/../' . self::MIGRATIONS_PATH;
+        $this->migrationsPath = __DIR__ . '/../' . self::MIGRATIONS_PATH;
     }
 
     public function __invoke()

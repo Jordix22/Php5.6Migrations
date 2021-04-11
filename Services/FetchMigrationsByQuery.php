@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../src/Database.php');
+require_once(__DIR__ . '/../src/Database.php');
 
 class FetchMigrationsByQuery
 {

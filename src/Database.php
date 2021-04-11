@@ -7,7 +7,7 @@ class Database extends MySQLi implements IDataBase
 
     public function connectToDatabase()
     {
-        $config = include(dirname(__FILE__) . '/../Configuration/config.php');
+        $config = include(__DIR__ . '/../Configuration/config.php');
         if (!$config['HOST'] || !$config['USERNAME'] || !$config['PASSWORD'] || !$config['DATABASE']){
             return null;
         }

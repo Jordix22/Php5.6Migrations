@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../src/Database.php');
+require_once(__DIR__ . '/../src/Database.php');
 
 class MigrationTableExistsService
 {
@@ -14,7 +14,7 @@ class MigrationTableExistsService
 
     private function getSql()
     {
-        $config = include(dirname(__FILE__) . '/../Configuration/config.php');
+        $config = include(__DIR__ . '/../Configuration/config.php');
         $schema = isset($config['DATABASE']) ? $config['DATABASE'] : '';
 
         return "SELECT * FROM information_schema.tables WHERE table_schema = '$schema' AND table_name ='migration_version' LIMIT 1";

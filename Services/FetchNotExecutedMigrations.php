@@ -1,7 +1,7 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../Services/FetchExecutedMigrations.php');
-require_once(dirname(__FILE__) . '/../Services/FetchMigrationFiles.php');
+require_once(__DIR__ . '/../Services/FetchExecutedMigrations.php');
+require_once(__DIR__ . '/../Services/FetchMigrationFiles.php');
 
 class FetchNotExecutedMigrations
 {

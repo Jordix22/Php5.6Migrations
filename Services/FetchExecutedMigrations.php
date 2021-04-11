@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/FetchMigrationsByQuery.php');
+require_once(__DIR__ . '/FetchMigrationsByQuery.php');
 
 class FetchExecutedMigrations
 {
@@ -13,7 +13,7 @@ class FetchExecutedMigrations
 
     public function __invoke()
     {
-        $config = include(dirname(__FILE__) . '/../Configuration/config.php');
+        $config = include(__DIR__ . '/../Configuration/config.php');
         $schema = isset($config['DATABASE']) ? $config['DATABASE'] : '';
 
         return $this->fetchMigrationsByQueryService->__invoke("SELECT * FROM $schema.migration_version");

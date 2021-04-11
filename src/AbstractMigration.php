@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/Database.php');
+require_once(__DIR__ . '/Database.php');
 
 class AbstractMigration
 {
@@ -12,7 +12,7 @@ class AbstractMigration
     {
         $this->databaseConnection = new Database();
         $this->databaseConnection->connectToDatabase();
-        $config = include(dirname(__FILE__) . '/../Configuration/config.php');
+        $config = include(__DIR__ . '/../Configuration/config.php');
         $this->schema = isset($config['DATABASE']) ? $config['DATABASE'] : '';
     }
 

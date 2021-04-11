@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../src/Logger.php');
+require_once(__DIR__ . '/../src/Logger.php');
 
 class createMigration
 {

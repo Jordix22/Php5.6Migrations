@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../src/AbstractMigration.php');
+require_once(__DIR__ . '/../src/AbstractMigration.php');
 
 /**
  * Auto-generated Migration: Please modify to your needs!

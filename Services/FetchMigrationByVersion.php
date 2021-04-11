@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/FetchMigrationsByQuery.php');
+require_once(__DIR__ . '/FetchMigrationsByQuery.php');
 
 class FetchMigrationByVersion
 {
@@ -9,7 +9,7 @@ class FetchMigrationByVersion
 
     public function __construct()
     {
-        $config = include(dirname(__FILE__) . '/../Configuration/config.php');
+        $config = include(__DIR__ . '/../Configuration/config.php');
         $this->schema = isset($config['DATABASE']) ? $config['DATABASE'] : '';
         $this->fetchMigrationsByQueryService = new FetchMigrationsByQuery();
     }
