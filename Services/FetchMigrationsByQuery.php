@@ -10,6 +10,11 @@ class FetchMigrationsByQuery
 
     private $connector;
 
+    public function __construct()
+    {
+        $this->connector = new Database();
+    }
+
     public function __invoke($query)
     {
         $rawResult = $this->connector
